@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Production build (webpack)" type="NodeJSConfigurationType" path-to-js-file="node_modules/.bin/webpack" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="NODE_ENV" value="production" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
