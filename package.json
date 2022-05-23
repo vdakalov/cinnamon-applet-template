@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Cinnamon applet template",
   "scripts": {
+    "build:dev": "webpack",
+    "build": "NODE_ENV=production webpack",
+    "register": "[ -f \"build/uuid.txt\" ] && ln -sv $(pwd)/build ~/.local/share/cinnamon/applets/$(cat build/uuid.txt) || echo \"First build applet\"",
+    "unregister": "[ -f \"build/uuid.txt\" ] && rm -rv ~/.local/share/cinnamon/applets/$(cat build/uuid.txt) || echo \"First build applet\"",
+    "reload": "[ -f \"build/uuid.txt\" ] && dbus-send --session --dest=org.Cinnamon.LookingGlass --type=method_call /org/Cinnamon/LookingGlass org.Cinnamon.LookingGlass.ReloadExtension string:\"$(cat build/uuid.txt)\" string:'APPLET' || echo \"First build applet\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

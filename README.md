@@ -41,25 +41,26 @@ and it will set to `true` otherwise.
 
 ## Run configurations
 If you are using WebStorm IDE there are number of built-in run configurations. It descriptions
-below.
+below. It also possible to run with `npm run`, so correspond npm script name specified in
+square brackets
 
-### Build (webpack)
+### Build (webpack) [build:dev]
 1. Clear `build` folder in project root
 2. Compile `.ts` files into single `.js` file with name of the project and put it in `build`
 directory (e.g. "cinnamon-applet-template")
 3. Create new or copy existent `applet.js` file in `build` directory
 4. Create new or copy existent `metadata.json` file in `build` directory
 
-### Production build (webpack)
+### Production build (webpack) [build]
 Same as "Build (webpack)" but set `debug` variable to `false`
 
-### Register applet
+### Register applet [register]
 Create soft link to project build directory in `~/.local/share/cinnamon/applets/`.
 
-### Unregister applet
+### Unregister applet [unregister]
 Remove created soft link in `~/.local/share/cinnamon/applets/`.
 
-### Reload applet code
+### Reload applet code [reload]
 It do unknown magick to reload applet code. Doesn't work for me. I'm just restart cinnamon and it
 works fine.
 
